@@ -237,7 +237,7 @@ noremap <silent> J 5j
 " N key: go to the start of the line
 noremap <silent> N 0
 " I key: go to the end of the line
-noremap <silent> I $
+" noremap <silent> I $
 
 " Faster in-line navigation
 noremap W 5w
@@ -330,7 +330,7 @@ nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'st'<CR><C-\><C-N>:q<CR>
 inoremap <C-u> <ESC>lx$p
 
 " Opening a terminal window
-noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
+noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res -5<CR>:term<CR>
 
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
@@ -339,7 +339,7 @@ noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 noremap <LEADER>sc :set spell!<CR>
 
 " Press ` to change case (instead of ~)
-noremap ` ~
+" noremap ` ~
 
 noremap <C-c> zz
 " noremap <silent> <space>g :<C-u>CocList --normal gstatus<CR>
@@ -643,7 +643,7 @@ let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
 	let col = col('.') - 1
-	return !col || getline('.')[col - 1]	=~ '\s'
+return !col || getline('.')[col - 1]	=~ '\s'
 endfunction
 inoremap <silent><expr> <Tab>
 			\ pumvisible() ? "\<C-n>" :
@@ -796,26 +796,26 @@ let g:ctrlp_cmd = 'CtrlP'
 " ===
 " === vim-bookmarks
 " ===
-let g:bookmark_no_default_key_mappings = 1
-nmap mt <Plug>BookmarkToggle
-nmap ma <Plug>BookmarkAnnotate
-nmap ml <Plug>BookmarkShowAll
-nmap mi <Plug>BookmarkNext
-nmap mn <Plug>BookmarkPrev
-nmap mC <Plug>BookmarkClear
-nmap mX <Plug>BookmarkClearAll
-nmap mu <Plug>BookmarkMoveUp
-nmap me <Plug>BookmarkMoveDown
-nmap <Leader>g <Plug>BookmarkMoveToLine
-let g:bookmark_save_per_working_dir = 1
-let g:bookmark_auto_save = 1
-let g:bookmark_highlight_lines = 1
-let g:bookmark_manage_per_buffer = 1
-let g:bookmark_save_per_working_dir = 1
-let g:bookmark_center = 1
-let g:bookmark_auto_close = 1
-let g:bookmark_location_list = 1
-
+"let g:bookmark_no_default_key_mappings = 1
+"nmap mt <Plug>BookmarkToggle
+"nmap ma <Plug>BookmarkAnnotate
+"nmap ml <Plug>BookmarkShowAll
+"nmap mi <Plug>BookmarkNext
+"nmap mn <Plug>BookmarkPrev
+"nmap mC <Plug>BookmarkClear
+"nmap mX <Plug>BookmarkClearAll
+"nmap mu <Plug>BookmarkMoveUp
+"nmap me <Plug>BookmarkMoveDown
+"nmap <Leader>g <Plug>BookmarkMoveToLine
+"let g:bookmark_save_per_working_dir = 1
+"let g:bookmark_auto_save = 1
+"let g:bookmark_highlight_lines = 1
+"let g:bookmark_manage_per_buffer = 1
+"let g:bookmark_save_per_working_dir = 1
+"let g:bookmark_center = 1
+"let g:bookmark_auto_close = 1
+"let g:bookmark_location_list = 1
+"
 
 " ===
 " === Undotree
@@ -854,11 +854,12 @@ endfunc
 " ===
 "let g:VM_theme             = 'iceblue'
 "let g:VM_default_mappings = 0
-let g:VM_leader = {'default': ',', 'visual': ',', 'buffer': ','}
+"let g:VM_leader = {'default': ',', 'visual': ',', 'buffer': ','}
 let g:VM_maps = {}
-let g:VM_custom_motions  = {'n': 'h', 'i': 'l', 'u': 'k', 'e': 'j', 'N': '0', 'I': '$', 'h': 'e'}
-let g:VM_maps['i']         = 'k'
-let g:VM_maps['I']         = 'K'
+" 自定义vim 的 快捷键
+"let g:VM_custom_motions  = {'n': 'h', 'i': 'l', 'u': 'k', 'e': 'j', 'N': '0', 'I': '$', 'h': 'e'}
+"let g:VM_maps['i']         = 'k'
+"let g:VM_maps['I']         = 'K'
 let g:VM_maps['Find Under']         = '<C-">'
 let g:VM_maps['Find Subword Under'] = '<C-">'
 let g:VM_maps['Find Next']         = ''
@@ -961,7 +962,7 @@ augroup calendar-mappings
 	autocmd FileType calendar nmap <buffer> u <Plug>(calendar_up)
 	autocmd FileType calendar nmap <buffer> n <Plug>(calendar_left)
 	autocmd FileType calendar nmap <buffer> e <Plug>(calendar_down)
-	autocmd FileType calendar nmap <buffer> i <Plug>(calendar_right)
+	"autocmd FileType calendar nmap <buffer> i <Plug>(calendar_right)
 	autocmd FileType calendar nmap <buffer> <c-u> <Plug>(calendar_move_up)
 	autocmd FileType calendar nmap <buffer> <c-n> <Plug>(calendar_move_left)
 	autocmd FileType calendar nmap <buffer> <c-e> <Plug>(calendar_move_down)
