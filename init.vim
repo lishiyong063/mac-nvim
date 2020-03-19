@@ -591,13 +591,13 @@ set lazyredraw
 set termguicolors	" enable true colors support
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-"let ayucolor="mirage"
+let ayucolor="mirage"
 "let g:oceanic_next_terminal_bold = 1
 "let g:oceanic_next_terminal_italic = 1
 "let g:one_allow_italics = 1
 
 "color dracula
-"color one
+" color one
 color deus
 "color gruvbox
 "let ayucolor="light"
@@ -827,12 +827,12 @@ let g:undotree_ShortIndicators = 1
 let g:undotree_WindowLayout = 2
 let g:undotree_DiffpanelHeight = 8
 let g:undotree_SplitWidth = 24
-function g:Undotree_CustomMap()
-	nmap <buffer> u <plug>UndotreeNextState
-	nmap <buffer> e <plug>UndotreePreviousState
-	nmap <buffer> U 5<plug>UndotreeNextState
-	nmap <buffer> E 5<plug>UndotreePreviousState
-endfunc
+" function g:Undotree_CustomMap()
+" 	nmap <buffer> u <plug>UndotreeNextState
+" 	nmap <buffer> e <plug>UndotreePreviousState
+" 	nmap <buffer> U 5<plug>UndotreeNextState
+" 	nmap <buffer> E 5<plug>UndotreePreviousState
+" endfunc
 
 
 " ==
