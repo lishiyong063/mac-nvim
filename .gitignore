@@ -1,0 +1,10 @@
+*.swp
+view/
+plugged/
+sessions/
+autoload/
+tmp/
+.netrwhist
+_machine_specific.vim
+.vim-bookmarks
+
