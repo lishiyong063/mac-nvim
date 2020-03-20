@@ -235,9 +235,8 @@ noremap <silent> K 5k
 noremap <silent> J 5j
 
 " N key: go to the start of the line
-noremap <silent> N 0
 " I key: go to the end of the line
-" noremap <silent> I $
+noremap <silent> 1 $
 
 " Faster in-line navigation
 noremap W 5w
@@ -287,7 +286,7 @@ noremap sh <C-w>t<C-w>K
 " Place the two screens side by side
 noremap sv <C-w>t<C-w>H
 
-" Rotate screens
+" Rotate screens 旋转窗口
 noremap srh <C-w>b<C-w>K
 noremap srv <C-w>b<C-w>H
 
@@ -306,6 +305,7 @@ noremap tc :tabe<CR>
 " Move the tabs with tmn and tmi
 " noremap tmn :-tabmove<CR>
 " noremap tmi :+tabmove<CR>
+" tab 页面切换
 noremap th :-tabmove<CR>
 noremap tl :+tabmove<CR>
 noremap py :CocCommand python.setInterpreter<CR>
@@ -1298,10 +1298,23 @@ function SetTitle()
 endfunction
 autocmd BufNewFile * normal G
 
-" 光标样式
-if $TERM_PROGRAM =~ "iTerm"
-let &t_SI = "\]50;CursorShape=1\x7"
-let &t_EI = "\]50;CursorShape=0\x7"
-endif
-
+" == 注释 ==
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 0
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+" 使用F1来切换注释
+map <silent> <F1> <Leader>ci
 
